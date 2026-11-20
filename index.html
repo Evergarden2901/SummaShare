@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SummaShare</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <a class="logo" href="#hero">SummaShare</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#university">University</a>
+        <a href="#school">School</a>
+        <a href="#novel">Novel</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <h1>Find what you want here!</h1>
+
+        <div class="search-box">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Type a summary name..."
+            aria-label="Search summaries by name"
+          />
+        </div>
+
+        <!-- Summary form -->
+        <form class="add-form" id="addForm" novalidate>
+          <h2>Add New Summary</h2>
+          <div class="form-field">
+            <label for="nameInput">Summary name</label>
+            <input
+              type="text"
+              id="nameInput"
+              name="name"
+              placeholder="e.g. Linear Algebra Notes"
+            />
+            <p class="error" id="nameError" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="categoryInput">Category</label>
+            <select id="categoryInput" name="category">
+              <option value="University">University</option>
+              <option value="School">School</option>
+              <option value="Novel / Other">Novel / Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="subjectInput">Subject</label>
+            <input
+              type="text"
+              id="subjectInput"
+              name="subject"
+              placeholder="e.g. Languages, Science, Romance"
+            />
+            <p class="error" id="subjectError" aria-live="polite"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="urlInput">File URL</label>
+            <input
+              type="text"
+              id="urlInput"
+              name="url"
+              placeholder="https://example.com/notes.pdf"
+            />
+            <p class="error" id="urlError" aria-live="polite"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Summary</button>
+        </form>
+      </section>
+
+      <!-- content -->
+      <section class="category-section" id="university">
+        <div class="section-head">
+          <h2>University</h2>
+        </div>
+        <div class="card-grid" data-category="University"></div>
+      </section>
+
+      <section class="category-section" id="school">
+        <div class="section-head">
+          <h2>School</h2>
+        </div>
+        <div class="card-grid" data-category="School"></div>
+      </section>
+
+      <section class="category-section" id="novel">
+        <div class="section-head">
+          <h2>Novel / Other</h2>
+        </div>
+        <div class="card-grid" data-category="Novel / Other"></div>
+      </section>
+
+      <!-- clear sec -->
+      <section class="action-bar" aria-label="List actions">
+        <span id="itemCounter">0 items</span>
+        <button type="button" class="btn btn-danger" id="clearAllBtn">
+          Clear All
+        </button>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer class="page-footer">
+      <p>&copy; 2026 SummaShare - Study Summary Sheets Sharing</p>
+      <p>By: 692115004 KANYANAT ROBCHANA &amp; 692115008 CHARUNEE CHAILERT</p>
+    </footer>
+
+    <!--Dialog-->
+    <dialog id="confirmDialog" aria-labelledby="dialogTitle">
+      <h2 id="dialogTitle">Clear the whole list?</h2>
+      <p>All items will be removed.</p>
+      <div class="dialog-actions">
+        <button type="button" class="btn" id="cancelBtn">Cancel</button>
+        <button type="button" class="btn btn-danger" id="confirmBtn">
+          Confirm
+        </button>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
